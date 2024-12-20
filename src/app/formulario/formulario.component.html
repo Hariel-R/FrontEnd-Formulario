@@ -1,0 +1,115 @@
+
+<div class="m-auto col-6 text-bg-light text-dark border border-dark rounded-5 p-5">
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <h2 class="fw-bolder">Cadastro</h2>
+
+      <div class="row">
+        <div class="col-12 mt-1">
+          <label for="usuario" class="form-label fw-bold" >Usuário:</label>
+          <input type="text" class="form-control border border-dark" id="usuario" formControlName="usuario" />
+          <div *ngIf="form.get('usuario')?.invalid && form.get('usuario')?.touched">
+            O usuário deve ter no mínimo 3 caracteres.
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-6 mt-1">
+          <label for="senha" class="form-label fw-bold">Senha:</label>
+          <input class="form-control border border-dark" type="password" id="senha" formControlName="senha" />
+          <div *ngIf="form.get('senha')?.invalid && form.get('senha')?.touched">
+            A senha deve ter no mínimo 6 caracteres.
+          </div>
+        </div>
+        <div class="col-6 mt-1">
+          <label for="confirmacaoSenha" class="form-label fw-bold">Confirmação de Senha:</label>
+          <input class="form-control border border-dark" type="password" id="confirmacaoSenha" formControlName="confirmacaoSenha" />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 mt-1">
+          <label for="nomeCompleto" class="form-label fw-bold">Nome Completo:</label>
+          <input class="form-control border border-dark"  type="text" id="nomeCompleto" formControlName="nomeCompleto" />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-6 mt-1">
+          <label for="dataNascimento" class="form-label fw-bold">Data de Nascimento:</label>
+          <input class="form-control border border-dark"  type="date" id="dataNascimento" formControlName="dataNascimento" />
+        </div>
+        <div class="col-6 mt-1">
+          <label for="email" class="form-label fw-bold">Email:</label>
+          <input class="form-control border border-dark" type="email" id="email" formControlName="email" />
+          <div *ngIf="form.get('email')?.invalid && form.get('email')?.touched">
+            Insira um email válido.
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-6 mt-1">
+          <label for="rg" class="form-label fw-bold">RG:</label>
+          <input class="form-control border border-dark" type="text" mask="00.000.000-0" id="rg" formControlName="rg" />
+        </div>
+        <div class="col-6 mt-1">
+          <label for="cpf" class="form-label fw-bold">CPF:</label>
+          <input class="form-control border border-dark" type="text" mask="000.000.000-00" id="cpf" formControlName="cpf" />
+          <div *ngIf="form.get('cpf')?.invalid && form.get('cpf')?.touched">
+            O CPF deve conter 11 dígitos numéricos.
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <label class="form-label fw-bold mt-2" for="sexo">Sexo:</label>
+        <div class="col-6">
+          <input class="form-check-input border border-dark" type="radio" value="Masculino" formControlName="sexo" id="masculino"/>
+          <label class="form-check-label ms-1" for="masculino">
+            Masculino
+          </label>
+        </div>
+        <div class="col-6">
+          <input class="form-check-input border border-dark" type="radio" value="Feminino" formControlName="sexo" id="feminino"/> 
+          <label class="form-check-label ms-1" for="feminino">
+            Feminino
+          </label>
+        </div>
+          <div *ngIf="form.get('sexo')?.invalid && form.get('sexo')?.touched">
+            Selecione um sexo.
+          </div>
+      </div>
+
+      <div class="row">
+        <div class="col-6 mt-2">
+          <input class="form-check-input border border-dark" type="checkbox" formControlName="termosAceitos" id="termos"/>
+          <label class="form-check-label ms-1" for="termos">
+            Aceito os Termos
+          </label>
+          <div *ngIf="form.get('termosAceitos')?.invalid && form.get('termosAceitos')?.touched">
+            Você deve aceitar os termos.
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div classe="col-1">
+          <input class="form-check-input border border-dark" type="checkbox" formControlName="notificacoes" id="notificao" />
+          <label class="form-check-label ms-1" for="notificao">
+            Aceito receber notificações
+          </label>
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="col-1 mt-3">
+          <button class="border border-dark btn btn-primary" type="submit" [disabled]="form.invalid">Enviar</button>
+        </div>
+      </div>
+
+  </form>
+  
+</div>

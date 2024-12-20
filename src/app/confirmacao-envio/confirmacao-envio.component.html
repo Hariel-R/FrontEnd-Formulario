@@ -1,0 +1,14 @@
+<div class="m-auto col-6 text-bg-light text-dark border border-dark rounded-5 p-5" >
+
+  <h2 class="fw-bolder mb-5">Dados cadastrados com sucesso!</h2>
+
+    <h5 class="fw-bold mb-4">Dados informados:</h5>
+
+      <p class="col-6"><span class="fw-bold">Nome completo:</span> {{nome}}</p>
+      <p class="col-6"><span class="fw-bold">Data de nascimento:</span> {{data}}</p>
+      <p class="col-6"><span class="fw-bold">Email:</span> {{email}}</p>
+      <p class="col-6"><span class="fw-bold">Rg: </span> <span>{{rg | mask:'00.000.000-0'}}</span></p>
+      <p class="col-6"><span class="fw-bold">Cpf: </span><span>{{cpf | mask:'000.000.000-00'}}</span></p>
+      <p class="col-6"><span class="fw-bold">Sexo:</span> {{sexo}}</p>
+      
+</div>

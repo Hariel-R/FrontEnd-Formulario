@@ -1,0 +1,9 @@
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Garante altura total da tela */
+    background-color: #0dcaf0; /* Fundo azul similar à classe `text-bg-info` */
+    margin: 0; /* Remove margens indesejadas */
+  }
+  
